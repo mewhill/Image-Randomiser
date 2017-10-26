@@ -1,0 +1,363 @@
+<style>
+    #therapy__icon_wrapper{
+    text-align: center;
+    }
+
+    .therapy__icon{
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+      width: 33.33%;
+      padding: 10px;
+    margin: auto -2px;
+    }
+
+    .therapy__icon_name{
+      color: purple;
+      z-index: 100;
+      font-weight: bold;
+      display: block;
+      text-align: center;
+      height: 2em;
+      font-size: .9em;
+	margin-bottom: .5em;
+    }
+
+    @media (min-width: 768px){
+    .therapy__icon{
+    width: 16.667%;
+    }
+	}
+
+    .therapy__icon img{
+      opacity: 0;
+  transition: all .75s ease-in-out;
+   -moz-transition: all .75s ease-in-out;
+   -webkit-transition: all .75s ease-in-out;
+    }
+
+   img.icon_in, img.flip-image{
+  opacity: 1;
+}
+
+img{
+  max-width: 100%;  max-height: 100%;
+}
+
+    .therapy_icon_image{
+  position: relative;
+  margin: auto;
+  line-height: 0;
+  text-align: center;
+}
+
+.flipParent .flip-image-back{
+  transform: rotateY(0);
+}
+
+.flipParent .flip-image-front{
+  opacity: 0;
+}
+.flip-image {
+  max-width: 150px;
+  max-height: 150px;
+}
+.flip-image-back {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  backface-visibility: hidden;
+  transform: rotateY(-180deg);
+  transform-style: preserve-3d;
+}
+</style>
+
+<div id="therapy__icon_wrapper">
+    <!--<div class="therapy__icon"><img src="" /><span class="therapy__icon_name"></span></div>
+    <div class="therapy__icon"><img src="" /><span class="therapy__icon_name"></span></div>
+    <div class="therapy__icon"><img src="" /><span class="therapy__icon_name"></span></div>
+    <div class="therapy__icon"><img src="" /><span class="therapy__icon_name"></span></div>
+    <div class="therapy__icon"><img src="" /><span class="therapy__icon_name"></span></div>
+    <div class="therapy__icon"><img src="" /><span class="therapy__icon_name"></span></div>-->
+</div>
+
+<script>
+var images_array = [];
+function preload_icons() {
+    var icon_wrapper = document.getElementById("therapy__icon_wrapper");
+    for (var i = 0; i < arguments.length; i++) {
+        images_array[i] = new Image();
+        images_array[i].src = preload_icons.arguments[i].src;
+        images_array[i].name = preload_icons.arguments[i].name;
+
+        var icon_obj = document.createElement('div');
+        var icon_img = document.createElement('img');
+        var icon_img_wrap = document.createElement('div');
+        icon_obj.className = "therapy__icon";
+        icon_img_wrap.className = "therapy_icon_image";
+
+        var icon_name = document.createElement('span');
+        icon_name.className = "therapy__icon_name";
+
+        icon_obj.appendChild(icon_name);
+        icon_obj.appendChild(icon_img_wrap);
+        icon_img_wrap.appendChild(icon_img);
+        icon_wrapper.appendChild(icon_obj);
+    }
+}
+var icon_obj = document.getElementsByClassName("therapy__icon");
+
+preload_icons({
+  src: "/media/1127/glutenfree.png",
+  name: "Gluten Free"
+},
+              {
+  src:
+"/media/1126/insectsprot.png",
+  name: "Bite and Sting Relief"
+},
+              {
+  src: "/media/1125/uva.png",
+  name: "UVA/UVB Protection"
+},
+              {
+  src: "/media/1123/erectiledys.png",
+  name: "Erectile Dysfunction"
+},
+              {
+  src: "/media/1122/vitamins.png",
+  name: "Clinical Nutrition"
+},
+              {
+  src: "/media/1121/antioxidant.png",
+  name: "Anti-Oxidant"
+},
+              {
+  src: "/media/1120/slimming.png",
+  name: "Slmming"
+},
+              {
+  src: "/media/1119/cellrenewal.png",
+  name: "Cell Renewal"
+},
+              {
+  src: "/media/1118/moisturiser.png",
+  name: "Moisturiser"
+},
+              {
+  src: "/media/1117/energyprovider.png",
+  name: "Energy Provider"
+},
+              {
+  src: "/media/1116/strongerimmune.png",
+  name: "Stronger Immune System"
+},
+              {
+  src: "/media/1115/babysafe.png",
+  name: "Allergies"
+},
+              {
+  src: "/media/1114/pregnancysup.png",
+  name: "Infant Health"
+},
+              {
+  src: "/media/1113/pregnancy.png",
+  name: "Pregnancy"
+},
+              {
+  src: "/media/1112/femalegen.png",
+  name: "Female Health Change"
+},
+              {
+  src: "/media/1111/detox.png",
+  name: "Ovarian Health"
+},
+              {
+  src: "/media/1110/healthyintestine.png",
+  name: "Healthy Intestine"
+},
+              {
+  src:  "/media/1109/healthystomach.png",
+  name: "Healthy Stomach"
+},
+              {
+  src: "/media/1108/energy.png",
+  name: "Energy"
+},
+              {
+  src: "/media/1107/strongermuscles.png",
+  name: "Stronger Muscles"
+},
+              {
+  src: "/media/1106/cicatrizing.png",
+  name: "Scar Treatment"
+},
+              {
+  src: "/media/1105/teenhealth.png",
+  name: "Teen Health"
+},
+              {
+  src: "/media/1104/circulation.png",
+  name: "Circulation"
+},
+              {
+  src: "/media/1103/healthybones.png",
+  name: "Healthy Bones"
+},
+              {
+  src: "/media/1102/sleep.png",
+  name: "Sleep"
+},
+              {
+  src: "/media/1101/internalclock.png",
+  name: "Internal Clock"
+},
+              {
+  src: "/media/1100/sorethroat.png",
+  name: "Dysphagia"
+},
+              {
+  src: "/media/1099/cognitive.png",
+  name: "Cognitive"
+},
+              {
+  src: "/media/1098/eyesight.png",
+  name: "Eye Sight"
+},
+              {
+  src: "/media/1304/heart.png",
+  name: "Healthy Heart"
+}
+)
+
+var rand_arrayObj = function(array){
+  var obj = array[Math.floor(Math.random()*array.length)];
+  return {
+    src: obj.src,
+    name: obj.name
+  }
+}
+
+var elemDom = function(el){
+  return document.querySelectorAll(el).length > 1;
+}
+
+var apply_img = {
+
+    init: function () {
+        var i = 0;
+        while (i < icon_obj.length) {
+            var k = i;
+            var icon_img = icon_obj[i].getElementsByTagName('img')[0];
+            var icon_label = icon_obj[i].getElementsByClassName('therapy__icon_name')[0];
+
+            var image_pick = rand_arrayObj(images_array);
+            icon_img.className = "";
+
+            var j = i + 1;
+            icon_img.src = image_pick.src;
+            icon_label.innerHTML = image_pick.name;
+
+            while (elemDom('img[src="' + image_pick.src + '"]')) {
+                //Re-populate the image.src with new random src (to prevent duplicate showing)
+                var image_pick = rand_arrayObj(images_array);
+
+                icon_img.src = image_pick.src;
+                icon_label.innerHTML = image_pick.name;
+
+                continue;
+            }
+            var timer = Math.floor(Math.random() * 20);
+            setTimeout(this.show_img, timer * 150 + 100, i);
+            i++;
+        }
+
+    },
+
+    flip: function () {
+        var obj_1 = Math.floor(Math.random() * icon_obj.length);
+        var obj_2 = Math.floor(Math.random() * icon_obj.length);
+        while (obj_1 == obj_2) {
+            obj_2 = Math.floor(Math.random() * icon_obj.length);
+        }
+
+        var flipObj_1 = {
+            img: this.getFlipValues(obj_1).img,
+            front: this.getFlipValues(obj_1).front,
+            front_src: this.getFlipValues(obj_1).front.src,
+            back: this.getFlipValues(obj_1).back,
+            label: this.getFlipValues(obj_1).label,
+            label_text: this.getFlipValues(obj_1).label.innerHTML
+        }
+
+        var flipObj_2 = {
+            img: this.getFlipValues(obj_2).img,
+            front: this.getFlipValues(obj_2).front,
+            front_src: this.getFlipValues(obj_2).front.src,
+            back: this.getFlipValues(obj_2).back,
+            label: this.getFlipValues(obj_2).label,
+            label_text: this.getFlipValues(obj_2).label.innerHTML
+        }
+
+        flipObj_1.back.src = flipObj_2.front_src;
+        flipObj_2.back.src = flipObj_1.front_src;
+
+        $(flipObj_1.img).addClass("flipPrep");
+        $(flipObj_2.img).addClass("flipPrep");
+
+        setTimeout(this.show_flip, 0, flipObj_1.img);
+        setTimeout(this.show_flip, 0, flipObj_2.img);
+
+        flipObj_1.label.innerHTML = flipObj_2.label_text;
+        flipObj_2.label.innerHTML = flipObj_1.label_text;
+
+    },
+
+    getFlipValues: function (index) {
+
+        var old_img = icon_obj[index].getElementsByTagName('img')[0];
+        var new_img = document.createElement('img');
+        new_img.className = "flip-image flip-image-back";
+        var image_wrapper = icon_obj[index].getElementsByClassName('therapy_icon_image')[0];
+        old_img.className = "flip-image flip-image-front";
+        $(icon_obj[index].getElementsByClassName('therapy_icon_image')[0]).removeClass('flipParent');
+
+        if (!icon_obj[index].querySelectorAll("img.flip-image-back").length > 0) {
+            image_wrapper.appendChild(new_img);
+        }
+
+        return {
+            front: icon_obj[index].getElementsByClassName('flip-image-front')[0],
+            back: icon_obj[index].getElementsByClassName('flip-image-back')[0],
+            label: icon_obj[index].getElementsByClassName('therapy__icon_name')[0],
+            img: icon_obj[index].getElementsByClassName('therapy_icon_image')[0]
+        }
+    },
+
+    show_img: function (i) {
+        var icon_img = icon_obj[i].getElementsByTagName('img')[0];
+        icon_img.className = "icon_in icon__load--" + i;
+		
+		if(i+1 == icon_obj.length){
+		  setInterval(function(){
+			apply_img.flip()
+		  }, 4000);
+		}
+    },
+
+    show_flip: function (el) {
+        el.className = el.className + " flipParent";
+        setTimeout(function () {
+            $(el).removeClass('flipParent');
+            el.getElementsByClassName('flip-image-front')[0].remove();
+            el.getElementsByClassName('flip-image-back')[0].className = "flip-image";
+        }, 1500);
+    }
+
+};
+apply_img.init();
+
+</script>
